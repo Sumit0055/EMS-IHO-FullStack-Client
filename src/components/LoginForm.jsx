@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import LoginLeftSide from './LoginLeftSide'
 import { Link } from 'react-router-dom'
-import { ArrowLeftIcon } from 'lucide-react'
+import { ArrowLeftIcon, EyeIcon, EyeOff, EyeOffIcon, Loader2Icon } from 'lucide-react'
 
 const LoginForm = ({ role, title, subtitle }) => {
 
@@ -59,8 +59,8 @@ const LoginForm = ({ role, title, subtitle }) => {
             action=""
             className='space-y-5'
             onSubmit={handleSubmit}>
-            <div 
-            className="">
+            <div
+              className="">
               <label
                 htmlFor=""
                 className='block text-sm font-medium text-slate-700 mb-2'>
@@ -74,17 +74,47 @@ const LoginForm = ({ role, title, subtitle }) => {
                 placeholder='example@gmail.com'
               />
             </div>
-            <div className="">
-              <label htmlFor="" className='block text-sm font-medium text-slate-700 mb-2'>Password</label>
-              <div className=" relative">
-                <input type={showPassword ? 'text' : 'password'} onChange={(e) => setPassword(e.target.value)} required placeholder='.......' className='pr-11' />
-                <button type='button'></button>
+
+            <div
+              className="">
+              <label
+                htmlFor=""
+                className='block text-sm font-medium text-slate-700 mb-2'>
+                Password
+              </label>
+
+              <div
+                className=" relative">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  placeholder='.......'
+                  className='pr-11' />
+                <button
+                  type='button'
+                  className='absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors'
+                  onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <EyeOffIcon size={18} /> : <EyeIcon size={18} />}
+                </button>
               </div>
             </div>
+
+            <button
+              type='submit'
+              disabled={loading}
+              className='w-full py-3 bg-linear-to-r from-indigo-600 to-indigo-400 text-white rounded-md text-sm font-semibold hover:to-indigo-600 disabled:opacity-50 transition-all duration-200 shadow-lg shadow-indigo-500/25 active:scale-[0.98] flex items-center justify-center'
+            >
+            {
+            loading && <Loader2Icon 
+            className='animate-spin h-4 w-4 mr-2'/>
+            }
+            Sign in
+            </button>
           </form>
         </div>
       </div>
-{/* 1:02:29 */}
+      {/* 1:02:29 */}
     </div>
   )
 }
