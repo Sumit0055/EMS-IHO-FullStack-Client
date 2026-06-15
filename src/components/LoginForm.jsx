@@ -62,7 +62,7 @@ const LoginForm = ({ role, title, subtitle }) => {
             <div
               className="">
               <label
-                htmlFor=""
+                // htmlFor=""
                 className='block text-sm font-medium text-slate-700 mb-2'>
                 Email address
               </label>
@@ -78,7 +78,7 @@ const LoginForm = ({ role, title, subtitle }) => {
             <div
               className="">
               <label
-                htmlFor=""
+                // htmlFor=""
                 className='block text-sm font-medium text-slate-700 mb-2'>
                 Password
               </label>
@@ -112,6 +112,64 @@ const LoginForm = ({ role, title, subtitle }) => {
             Sign in
             </button>
           </form>
+          {/* <form action="" className="space-y-5 max-w-md mx-auto px-4 sm:px-6 lg:px-8" onSubmit={handleSubmit}>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-slate-700 mb-2"
+              >
+                Email address
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="example@gmail.com"
+                className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-slate-700 mb-2"
+              >
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  placeholder="......."
+                  className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm pr-11 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <EyeOffIcon size={18} /> : <EyeIcon size={18} />}
+                </button>
+              </div>
+            </div>
+
+            
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 bg-gradient-to-r from-indigo-600 to-indigo-400 text-white rounded-md text-sm font-semibold hover:to-indigo-600 disabled:opacity-50 transition-all duration-200 shadow-lg shadow-indigo-500/25 active:scale-[0.98] flex items-center justify-center"
+            >
+              {loading && (
+                <Loader2Icon className="animate-spin h-4 w-4 mr-2" />
+              )}
+              Sign in
+            </button>
+          </form> */}
+
         </div>
       </div>
       {/* 1:02:29 */}
