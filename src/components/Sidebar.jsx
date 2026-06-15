@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { dummyProfileData } from '../assets/assets'
-import { CalendarIcon, ChevronRightIcon, FileTextIcon, icons, IndianRupee, LayoutGridIcon, MenuIcon, SettingsIcon, UserIcon, XIcon } from 'lucide-react'
+import { CalendarIcon, ChevronRightIcon, FileTextIcon, icons, IndianRupee, LayoutGridIcon, LogOutIcon, MenuIcon, SettingsIcon, UserIcon, XIcon } from 'lucide-react'
 
 const Sidebar = () => {
 
@@ -13,13 +13,13 @@ const Sidebar = () => {
         setUserName(dummyProfileData.firstName + " " + dummyProfileData.lastName)
     }, [])
 
-    // Close mobiole Sidebar on route change 
+    // Close mobile Sidebar on route change 
 
     useEffect(() => {
         setMobileOpen(false)
     }, [pathname])
 
-    const role = "ADMIN" || "EMPLOYEE";
+    const role = "" || "EMPLOYEE";
 
     const navItems = [
         {
@@ -56,32 +56,50 @@ const Sidebar = () => {
         }
     ]
 
+    const handleLogout = () => {
+        // window.localStorage.href = "/login"
+        window.location.href = "/login"
+    }
+
     const sidebarContent = (
         <>
             {/* Brand Header */}
-
-            <div className="px-5 pt-6 pb-5 border-b border-white/6">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
+            <div
+                className="px-5 pt-6 pb-5 border-b border-white/6">
+                <div
+                    className="flex items-center justify-between">
+                    <div
+                        className="flex items-center gap-3">
                         <UserIcon className='text-white size-7' />
                         <div className="">
-                            <p className='font-semibold text-[13px] text-white tracking-wide'>Employee MS</p>
-                            <p className='text-[11px] text-slate-500 font-medium'>Management System</p>
+                            <p
+                                className='font-semibold text-[13px] text-white tracking-wide'>
+                                Employee MS
+                            </p>
+                            <p
+                                className='text-[11px] text-slate-500 font-medium'>
+                                Management System
+                            </p>
                         </div>
                     </div>
-                    <button onClick={() => setMobileOpen(false)} className='lg:hidden text-slate-400 hover:text-white p-1'>
+                    <button
+                        onClick={() => setMobileOpen(false)}
+                        className='lg:hidden text-slate-400 hover:text-white p-1'>
                         <XIcon size={20} />
                     </button>
                 </div>
             </div>
-
             {/* user Profile card */}
             {
                 userName && (
-                    <div className="mx-3 mt-4 mb-1 p-3 rounded-lg  border border-white/6">
-                        <div className="flex items-center gap-3 ">
-                            <div className="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center ring-1 ring-white">
-                                <span className='text-slate-400 text-xs font-semibold'>
+                    <div
+                        className="mx-3 mt-4 mb-1 p-3 rounded-lg  border border-white/6">
+                        <div
+                            className="flex items-center gap-3 ">
+                            <div
+                                className="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center ring-1 ring-white">
+                                <span
+                                    className='text-slate-400 text-xs font-semibold'>
                                     {
                                         userName.charAt(0).toLocaleUpperCase()
                                     }
@@ -89,8 +107,7 @@ const Sidebar = () => {
                             </div>
                             <div
                                 className="min-w-0">
-                                <p
-                                    className='text-[13px] font-medium text-slate-200 truncate'>
+                                <p className='text-[13px] font-medium text-slate-200 truncate'>
                                     {userName}
                                 </p>
                                 <p>
@@ -101,7 +118,6 @@ const Sidebar = () => {
                     </div>
                 )
             }
-
             {/* Section label */}
             <div className="px-5 pt-5 pb-2">
                 <p
@@ -140,7 +156,18 @@ const Sidebar = () => {
 
             {/* Logout  */}
 
-
+            <div
+                className="p-3 border-t border-white/6">
+                <button
+                    onClick={handleLogout}
+                    className='flex items-center gap-3 w-full px-3 py-2.5 rounded-md text-[13px] font-medium text-slate-400 hover:text-rose-400 hover:bg-red-500/8 transition-all duration-150'>
+                    <LogOutIcon
+                        className='w-[17px] h-[17px]' />
+                    <span>
+                        Log out
+                    </span>
+                </button>
+            </div>
         </>
     )
 
