@@ -16,6 +16,7 @@ const LoginForm = ({ role, title, subtitle }) => {
   }
 
   return (
+    // Left Side Design  
     <div
       className="min-h-screen flex flex-col md:flex-row">
       <LoginLeftSide />
@@ -172,7 +173,6 @@ const LoginForm = ({ role, title, subtitle }) => {
 
         </div>
       </div>
-      {/* 1:02:29 */}
     </div>
   )
 }

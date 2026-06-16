@@ -21,6 +21,7 @@ const Sidebar = () => {
 
     const role = "" || "EMPLOYEE";
 
+    // Navbar Items 
     const navItems = [
         {
             name: "Dashboard",
@@ -63,7 +64,7 @@ const Sidebar = () => {
 
     const sidebarContent = (
         <>
-            {/* Brand Header */}
+            {/* Left Side Brand Header */}
             <div
                 className="px-5 pt-6 pb-5 border-b border-white/6">
                 <div
@@ -97,7 +98,7 @@ const Sidebar = () => {
                         <div
                             className="flex items-center gap-3 ">
                             <div
-                                className="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center ring-1 ring-white">
+                                className="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center ring-1 ring-white/15">
                                 <span
                                     className='text-slate-400 text-xs font-semibold'>
                                     {
@@ -107,10 +108,10 @@ const Sidebar = () => {
                             </div>
                             <div
                                 className="min-w-0">
-                                <p className='text-[13px] font-medium text-slate-200 truncate'>
+                                <p className='text-[13px] font-medium text-slate-200 truncate cursor-pointer'>
                                     {userName}
                                 </p>
-                                <p>
+                                <p className='cursor-pointer'>
                                     {role === "ADMIN" ? "Administrator" : "Employee"}
                                 </p>
                             </div>
@@ -207,5 +208,4 @@ const Sidebar = () => {
         </>
     )
 }
-
 export default Sidebar
