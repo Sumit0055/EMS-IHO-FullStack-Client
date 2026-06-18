@@ -23,12 +23,12 @@ const Employee = () => {
     setTimeout(() => {
       setLoading(false)
     }, 500)
-  }, [])
+  }, [selectedDept])
 
 
   useEffect(() => {
     fetchEmployees()
-  }, [])
+  }, [fetchEmployees])
 
   const filtered = employees.filter((emp) => `${emp.firstName} ${emp.lastName}`.toLowerCase().includes(search.toLowerCase()))
 
