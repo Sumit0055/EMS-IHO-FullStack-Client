@@ -54,9 +54,8 @@ const AttendanceHistory = ({ history }) => {
                       }
                     </td>
 
-
                     <td className='px-6 py-4'>
-                      <span className={`badge ${record.status === "PRESENT" ? "badge-success" : record.status === "LATE" ? "badge-warning" :" badge-danger"}`}>
+                      <span className={`badge ${record.status === "PRESENT" ? "badge-success" : record.status === "LATE" ? "badge-warning" : " badge-danger"}`}>
                         {record.status}
                       </span>
                     </td>
@@ -73,3 +72,4 @@ const AttendanceHistory = ({ history }) => {
 }
 
 export default AttendanceHistory
+// 4:13:56
